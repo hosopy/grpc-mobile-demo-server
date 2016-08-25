@@ -12,7 +12,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :message, :string, 1
   end
   add_message "streaming.FetchRequest" do
-    optional :num_items, :string, 1
+    optional :num_items, :int32, 1
   end
 end
 

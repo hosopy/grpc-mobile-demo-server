@@ -10,6 +10,7 @@ class StreamingRepositoryServer < Streaming::Repository::Service
       puts "[StreamingRepositoryServer] store : Request : #{item.inspect}"
       @repository[item.uuid] = item
       num_stored_items += 1
+      break if num_stored_items == 10
     end
 
     Streaming::StoreReply.new(message: "stored #{num_stored_items} items.").tap do |store_reply|
